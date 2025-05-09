@@ -1,0 +1,11 @@
+<Explain your team's strategy, implementation, etc.>
+
+The first goal that we had was to improve the puzzle solver, which we did by fussing the left and right diagonal attacks together in order to reduce the amount of iterations in our solver. 
+
+Our strategy was to implement a consistent loop that could hit the inside rail window that would not be subject to random spawn. In doing so, we could guarantee that we would always clean a window while also moving fast enough to clear the required number of tiles. Our goal was to limit the effect that the random seeds would have on our performance.
+
+For solving bot1, we simply identified the starting location of bot0, and moved through a different path (the reverse of our bot0 path) if we started at the bot1 location. The reverse path would implement the same strategy as bot0. 
+
+At the end of each route, we chose to jump to the opposite bots route. We did this in order to extend the routes of each bot in case the corresponding bot was able to finish faster than expected.
+
+Initially, we adopted a strategy of solving many puzzles at the beginning of the route, then racing through with our water turned on to the max. As we continued to develop though, we realized that this was not an optimal strategy and decided to implement a “solve along the way” strategy to increase the amount of cleaned tiles. 
